@@ -58,16 +58,13 @@ function playGame(playerInput) {
         }
     }
     
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
-    printMessage('Komputera ruch to: ' + computerMove);
-    
-    /* let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.'); */
-    let playerMove = getMoveName(playerInput);
+    let randomNumber = Math.floor(Math.random() * 3 + 1),
+        computerMove = getMoveName(randomNumber),
+        playerMove = getMoveName(playerInput),
+        winner = displayResult(computerMove, playerMove);
+        
+    printMessage('Komputera ruch to: ' + computerMove);   
     printMessage('Twój ruch to: ' + playerMove);
-    
-    let winner = displayResult(computerMove, playerMove);
-
 }
 
 document.getElementById('play-rock').addEventListener('click', function() {
