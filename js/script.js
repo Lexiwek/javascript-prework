@@ -1,7 +1,7 @@
 function playGame(playerInput) {
     clearMessages();
     function printMessage(msg){
-        let div = document.createElement('div');
+        const div = document.createElement('div');
         div.innerHTML = msg;
         document.getElementById('messages').appendChild(div);
     }
@@ -58,7 +58,7 @@ function playGame(playerInput) {
         }
     }
     
-    let randomNumber = Math.floor(Math.random() * 3 + 1),
+    const randomNumber = Math.floor(Math.random() * 3 + 1),
         computerMove = getMoveName(randomNumber),
         playerMove = getMoveName(playerInput),
         winner = displayResult(computerMove, playerMove);
